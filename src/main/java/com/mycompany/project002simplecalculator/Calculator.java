@@ -10,12 +10,23 @@ package com.mycompany.project002simplecalculator;
  * @author shawkathsrijon
  */
 public class Calculator extends javax.swing.JFrame {
-
+    private double operandOne = 0.0;
+    private double operandTwo = 0.0;
+    
+    private String operator;
     /**
      * Creates new form Calculator
      */
     public Calculator() {
         initComponents();
+    }
+    /**
+     * The displayBackup() method keeps backup from the display that what is entered.
+     * @return 
+     */
+    private String displayBackup(){
+        String displayBuffer = displayJTextField.getText();
+        return displayBuffer;
     }
 
     /**
@@ -70,6 +81,11 @@ public class Calculator extends javax.swing.JFrame {
         cancleJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         cancleJButton.setForeground(new java.awt.Color(255, 255, 255));
         cancleJButton.setText("C");
+        cancleJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancleJButtonActionPerformed(evt);
+            }
+        });
 
         moduleJButton.setBackground(new java.awt.Color(77, 76, 75));
         moduleJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
@@ -155,6 +171,11 @@ public class Calculator extends javax.swing.JFrame {
         additionJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         additionJButton.setForeground(new java.awt.Color(255, 255, 255));
         additionJButton.setText("+");
+        additionJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                additionJButtonActionPerformed(evt);
+            }
+        });
 
         threeJButton.setBackground(new java.awt.Color(77, 76, 75));
         threeJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
@@ -190,6 +211,11 @@ public class Calculator extends javax.swing.JFrame {
         equalJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         equalJButton.setForeground(new java.awt.Color(255, 255, 255));
         equalJButton.setText("=");
+        equalJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equalJButtonActionPerformed(evt);
+            }
+        });
 
         dotJButton.setBackground(new java.awt.Color(77, 76, 75));
         dotJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
@@ -315,12 +341,12 @@ public class Calculator extends javax.swing.JFrame {
 
     private void fourJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourJButtonActionPerformed
         String buttonFourText = fourJButton.getText();
-        displayJTextField.setText(buttonFourText);
+        displayJTextField.setText(displayBackup() + buttonFourText);
     }//GEN-LAST:event_fourJButtonActionPerformed
 
     private void eightJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightJButtonActionPerformed
         String buttonEightText = eightJButton.getText();
-        displayJTextField.setText(buttonEightText);
+        displayJTextField.setText(displayBackup() + buttonEightText);
     }//GEN-LAST:event_eightJButtonActionPerformed
 
     private void dotJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotJButtonActionPerformed
@@ -329,44 +355,62 @@ public class Calculator extends javax.swing.JFrame {
 
     private void oneJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneJButtonActionPerformed
         String buttonOneText = oneJButton.getText();
-        String displayBuffer = displayJTextField.getText();
-        displayJTextField.setText(displayBuffer + buttonOneText);
+        displayJTextField.setText(displayBackup() + buttonOneText);
     }//GEN-LAST:event_oneJButtonActionPerformed
 
     private void twoJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoJButtonActionPerformed
         String buttonTwoText = twoJButton.getText();
-        displayJTextField.setText(buttonTwoText);
+        displayJTextField.setText(displayBackup() + buttonTwoText);
     }//GEN-LAST:event_twoJButtonActionPerformed
 
     private void threeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeJButtonActionPerformed
         String buttonThreeText = threeJButton.getText();
-        displayJTextField.setText(buttonThreeText);
+        displayJTextField.setText(displayBackup() + buttonThreeText);
     }//GEN-LAST:event_threeJButtonActionPerformed
 
     private void fiveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveJButtonActionPerformed
         String buttonFiveText = fiveJButton.getText();
-        displayJTextField.setText(buttonFiveText);
+        displayJTextField.setText(displayBackup() + buttonFiveText);
     }//GEN-LAST:event_fiveJButtonActionPerformed
 
     private void sixJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixJButtonActionPerformed
         String buttonSixText = sixJButton.getText();
-        displayJTextField.setText(buttonSixText);
+        displayJTextField.setText(displayBackup() + buttonSixText);
     }//GEN-LAST:event_sixJButtonActionPerformed
 
     private void sevenJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenJButtonActionPerformed
         String buttonSevenText = sevenJButton.getText();
-        displayJTextField.setText(buttonSevenText);
+        displayJTextField.setText(displayBackup() + buttonSevenText);
     }//GEN-LAST:event_sevenJButtonActionPerformed
 
     private void nineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineJButtonActionPerformed
         String buttonNineText = nineJButton.getText();
-        displayJTextField.setText(buttonNineText);
+        displayJTextField.setText(displayBackup() + buttonNineText);
     }//GEN-LAST:event_nineJButtonActionPerformed
 
     private void zeroJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroJButtonActionPerformed
         String buttonZeroText = zeroJButton.getText();
-        displayJTextField.setText(buttonZeroText);
+        displayJTextField.setText(displayBackup() + buttonZeroText);
     }//GEN-LAST:event_zeroJButtonActionPerformed
+
+    private void cancleJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancleJButtonActionPerformed
+        displayJTextField.setText("");
+    }//GEN-LAST:event_cancleJButtonActionPerformed
+
+    private void additionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additionJButtonActionPerformed
+        operandOne = Double.parseDouble(displayJTextField.getText());
+        operator = additionJButton.getText();
+        displayJTextField.setText("");
+    }//GEN-LAST:event_additionJButtonActionPerformed
+
+    private void equalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalJButtonActionPerformed
+        operandTwo = Double.parseDouble(displayJTextField.getText());
+        char singleOperator = operator.charAt(0);
+        switch(singleOperator){
+            case "+":
+                break;
+        }
+    }//GEN-LAST:event_equalJButtonActionPerformed
 
     /**
      * @param args the command line arguments
