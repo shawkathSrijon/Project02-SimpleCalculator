@@ -12,6 +12,7 @@ package com.mycompany.project002simplecalculator;
 public class Calculator extends javax.swing.JFrame {
     private double operandOne = 0.0;
     private double operandTwo = 0.0;
+    private double result;
     
     private String operator;
     /**
@@ -91,11 +92,21 @@ public class Calculator extends javax.swing.JFrame {
         moduleJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         moduleJButton.setForeground(new java.awt.Color(255, 255, 255));
         moduleJButton.setText("%");
+        moduleJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moduleJButtonActionPerformed(evt);
+            }
+        });
 
         divisionJButton.setBackground(new java.awt.Color(255, 165, 31));
         divisionJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         divisionJButton.setForeground(new java.awt.Color(255, 255, 255));
         divisionJButton.setText("/");
+        divisionJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divisionJButtonActionPerformed(evt);
+            }
+        });
 
         sevenJButton.setBackground(new java.awt.Color(77, 76, 75));
         sevenJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
@@ -131,11 +142,21 @@ public class Calculator extends javax.swing.JFrame {
         multiJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         multiJButton.setForeground(new java.awt.Color(255, 255, 255));
         multiJButton.setText("*");
+        multiJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiJButtonActionPerformed(evt);
+            }
+        });
 
         subtractionJButton.setBackground(new java.awt.Color(255, 165, 31));
         subtractionJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
         subtractionJButton.setForeground(new java.awt.Color(255, 255, 255));
         subtractionJButton.setText("-");
+        subtractionJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtractionJButtonActionPerformed(evt);
+            }
+        });
 
         fourJButton.setBackground(new java.awt.Color(77, 76, 75));
         fourJButton.setFont(new java.awt.Font("Verdana", 0, 15)); // NOI18N
@@ -406,11 +427,51 @@ public class Calculator extends javax.swing.JFrame {
     private void equalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalJButtonActionPerformed
         operandTwo = Double.parseDouble(displayJTextField.getText());
         char singleOperator = operator.charAt(0);
+        
         switch(singleOperator){
-            case "+":
+            case '+':
+                result = operandOne + operandTwo;
+                break;
+            case '-':
+                result = operandOne - operandTwo;
+                break;
+            case '*':
+                result = operandOne * operandTwo;
+                break;
+            case '/':
+                result = operandOne * operandTwo;
+                break;
+            case '%':
+                result = operandOne % operandTwo;
                 break;
         }
+        
+        displayJTextField.setText(String.valueOf(result));
     }//GEN-LAST:event_equalJButtonActionPerformed
+
+    private void subtractionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractionJButtonActionPerformed
+        operandOne = Double.parseDouble(displayJTextField.getText());
+        operator = subtractionJButton.getText();
+        displayJTextField.setText("");
+    }//GEN-LAST:event_subtractionJButtonActionPerformed
+
+    private void multiJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiJButtonActionPerformed
+        operandOne = Double.parseDouble(displayJTextField.getText());
+        operator = multiJButton.getText();
+        displayJTextField.setText("");
+    }//GEN-LAST:event_multiJButtonActionPerformed
+
+    private void divisionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionJButtonActionPerformed
+        operandOne = Double.parseDouble(displayJTextField.getText());
+        operator = divisionJButton.getText();
+        displayJTextField.setText("");
+    }//GEN-LAST:event_divisionJButtonActionPerformed
+
+    private void moduleJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduleJButtonActionPerformed
+        operandOne = Double.parseDouble(displayJTextField.getText());
+        operator = moduleJButton.getText();
+        displayJTextField.setText("");
+    }//GEN-LAST:event_moduleJButtonActionPerformed
 
     /**
      * @param args the command line arguments

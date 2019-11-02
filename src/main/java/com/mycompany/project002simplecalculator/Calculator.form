@@ -199,6 +199,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="%"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moduleJButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="divisionJButton">
           <Properties>
@@ -213,6 +216,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="/"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="divisionJButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="sevenJButton">
           <Properties>
@@ -278,6 +284,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="*"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiJButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="subtractionJButton">
           <Properties>
@@ -292,6 +301,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subtractionJButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="fourJButton">
           <Properties>
